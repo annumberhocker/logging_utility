@@ -73,7 +73,8 @@
         "required": [
           "query",
           "llm_response",
-          "rating"
+          "rating",
+          "comments"
         ],
         "title": "logging_utility_request"
       },
