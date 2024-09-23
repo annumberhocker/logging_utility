@@ -42,7 +42,7 @@ async def log_to_csv(data: DataModel):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error occurred: {e}")
 
-# Run the application using: uvicorn main:app --reload
+# Run the application
 if __name__ == '__main__':
     if 'uvicorn' not in sys.argv[0]:
         uvicorn.run("app:app", host='0.0.0.0', port=8000, reload=True)
