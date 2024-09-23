@@ -57,9 +57,9 @@
             "type": "string",
             "title": "query"
           },
-          "response": {
+          "llm_response": {
             "type": "string",
-            "title": "response"
+            "title": "llm_response"
           },
           "rating": {
             "type": "string",
