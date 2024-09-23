@@ -8,13 +8,13 @@ import uvicorn
 app = FastAPI()
 
 # Define a file to store the CSV
-csv_file = 'test_results.csv'
+csv_file = '/tmp/test_results.csv'
 
 # Define the Pydantic model for incoming JSON structure
 class DataModel(BaseModel):
     query: str
     response: str
-    rating: int
+    rating: str
     comments: str
 
 # Create CSV if not exists
