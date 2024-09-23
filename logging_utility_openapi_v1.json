@@ -18,7 +18,7 @@
     }
   ],
   "paths": {
-    "/public/api/ibm_watson_webhook": {
+    "/log-to-csv": {
       "post": {
         "description": "send JSON results for logging",
         "summary": "logging_utility",
