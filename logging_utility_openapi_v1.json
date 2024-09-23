@@ -53,13 +53,28 @@
       "logging_utility_request": {
         "type": "object",
         "properties": {
-          "input": {
-            "type": "object",
-            "title": "input"
+          "query": {
+            "type": "string",
+            "title": "query"
+          },
+          "response": {
+            "type": "string",
+            "title": "response"
+          },
+          "rating": {
+            "type": "string",
+            "title": "rating"
+          },
+          "comments": {
+            "type": "string",
+            "title": "comments"
           }
         },
         "required": [
-          "input"
+          "query",
+          "response",
+          "rating",
+          "comments"
         ],
         "title": "logging_utility_request"
       },
