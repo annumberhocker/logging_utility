@@ -27,6 +27,8 @@ async def log_to_csv(data: DataModel):
     try:
         # Load existing CSV data
         df = pd.read_csv(csv_file)
+
+        print(data)
         
         # Convert the incoming JSON (Pydantic model) to a DataFrame
         new_data = pd.DataFrame([data.dict()])
