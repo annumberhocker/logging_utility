@@ -11,7 +11,7 @@
       "description": "The route to the application hosting the logging_utility api",
       "variables": {
         "route_url": {
-          "default": "",
+          "default": "https://logging-service.1m7e1ln410px.ca-tor.codeengine.appdomain.cloud",
           "description": "The portion of the Route URL that follows https://"
         }
       }
