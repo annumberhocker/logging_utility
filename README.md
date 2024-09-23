@@ -19,20 +19,24 @@ To run the application on your local machine, follow these steps:
     ```bash
     python -m venv assetEnv
     source assetEnv/bin/activate
-    pip install fastapi uvicorn pandas
-    ```
+    python -m pip install -r requirements.txt
+     ```
 
 4. Start the project:
 
     ```bash
-    uvicorn main:test_log_results --reload
+    uvicorn main:app --reload
+    ```
+    or
+    ```
+    python app.py
     ```
 
 5. URL access:
 
-    The url, for purposes of using cURL is http://0.0.0.0:4050.
+    The url, for purposes of using cURL is http://0.0.0.0:8000.
 
-    To access Swagger go to http://0.0.0.0:4050/docs
+    To access Swagger go to http://0.0.0.0:8000/docs
 ### Deploying onto Code Engine
 1. Log into [IBM Cloud](cloud.ibm.com)
 
@@ -100,7 +104,7 @@ To run the application on your local machine, follow these steps:
     - Limit the instance scaling to 1 and 1
     - Select **Domain mappings** to **Public**.
     - Under the **Optional settings**, **Environment variables**, create the variables with the credentials based on the `env` file
-    - Under **Optional settings**, **Image start options** change the **Listening port** to 4050
+    - Under **Optional settings**, **Image start options** change the **Listening port** to 8000
     - Finally click **Create**
 
 ### Accessing the URL on Code Engine
