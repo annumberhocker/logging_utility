@@ -25,10 +25,6 @@ To run the application on your local machine, follow these steps:
 4. Start the project:
 
     ```bash
-    uvicorn main:app --reload
-    ```
-    or
-    ```
     python app.py
     ```
 
@@ -75,7 +71,7 @@ To run the application on your local machine, follow these steps:
     From the Code Engine Project window, select **Image builds**, then go into the **Image build** tab, click build **Create** button
     
     Under the **Source** tab:
-    - Name your build (something like `rag-app`
+    - Name your build (something like `logging_service`)
     - Enter **Code repo URL**  as `https://github.com/annumberhocker/logging_utility`
     - Choose the branch name, i.e. `main`
     - Select **Next**
@@ -98,12 +94,11 @@ To run the application on your local machine, follow these steps:
 
     Navigate to the **Applications** tab within **Code Engine** on the left side and click **Create**.
 
-    - Provide a name for the Application, i.e. `rag-app`
-    - Choose **Use an existing container image**, and enter the image name created in step 5 for **Image reference**, i.e. `us.icr.io/<cr_namespace>/rag-app:latest`
+    - Provide a name for the Application, i.e. `logging_service`
+    - Choose **Use an existing container image**, and enter the image name created in step 5 for **Image reference**, i.e. `us.icr.io/<cr_namespace>/logging_service:latest`
     - Change the Ephemeral storage to 2.04
     - Limit the instance scaling to 1 and 1
     - Select **Domain mappings** to **Public**.
-    - Under the **Optional settings**, **Environment variables**, create the variables with the credentials based on the `env` file
     - Under **Optional settings**, **Image start options** change the **Listening port** to 8000
     - Finally click **Create**
 
