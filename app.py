@@ -13,14 +13,14 @@ csv_file = '/tmp/test_results.csv'
 # Define the Pydantic model for incoming JSON structure
 class DataModel(BaseModel):
     query: str
-    response: str
+    llm_response: str
     rating: str
     comments: str
 
 # Create CSV if not exists
 if not os.path.exists(csv_file):
     # Create the initial CSV with headers
-    pd.DataFrame(columns=['query', 'response', 'rating', 'comments']).to_csv(csv_file, index=False)
+    pd.DataFrame(columns=['query', 'llm_response', 'rating', 'comments']).to_csv(csv_file, index=False)
 
 @app.post("/log-to-csv/")
 async def log_to_csv(data: DataModel):
