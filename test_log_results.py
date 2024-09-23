@@ -5,7 +5,7 @@ import os
 
 app = FastAPI()
 
-# Define a folder to store the CSV
+# Define a file to store the CSV
 csv_file = 'test_results.csv'
 
 # Define the Pydantic model for incoming JSON structure
