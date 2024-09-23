@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "FastAPI",
+    "version": "0.1.0",
+    "description": "Logging API"
+  },
+  "servers": [
+    {
+      "url": "https://{route_url}",
+      "description": "The route to the application hosting the logging_utility api",
+      "variables": {
+        "route_url": {
+          "default": "",
+          "description": "The portion of the Route URL that follows https://"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/public/api/ibm_watson_webhook": {
+      "post": {
+        "description": "send JSON results for logging",
+        "summary": "logging_utility",
+        "operationId": "logging_utility_logging_utility_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logging_utility_response"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/logging_utility_request"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "logging_utility_request": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "object",
+            "title": "input"
+          }
+        },
+        "required": [
+          "input"
+        ],
+        "title": "logging_utility_request"
+      },
+      "sequifi_webhook_response": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "type": "object",
+            "title": "Response"
+          }
+        },
+        "title": "logging_utility_response"
+      }
+    }
+  }
+}
