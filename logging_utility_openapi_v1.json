@@ -63,7 +63,7 @@
         ],
         "title": "logging_utility_request"
       },
-      "sequifi_webhook_response": {
+      "logging_utility_response": {
         "type": "object",
         "properties": {
           "response": {
