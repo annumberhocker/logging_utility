@@ -10,7 +10,7 @@ To run the application on your local machine, follow these steps:
 1. Navigate to the project directory:
 
     ```bash
-    git clone <this repo>
+    git clone https://github.com/annumberhocker/logging_utility.git
     cd logging_utility
     ```
 
