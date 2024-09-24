@@ -15,6 +15,10 @@ To deploy the application in IBM Code Engine, follow the steps [here](./CODE_ENG
 
 You can deploy this application onto a provisioned [Red Hat OpenShift](https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started) cluster. Follow the steps [here](./OPENSHIFT_DEPLOY.md)
 
+## Creating a custom extension for watsonx Assistant
+
+See steps [here](./WXA.md) to connect this up to **IBM watsonx Assistant**.
+
 ## API descriptions
 
 **POST /log/{filename}**
