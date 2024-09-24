@@ -1,3 +1,5 @@
+# Connecting this RAG Log service to watsonx Assistant
+
 You connect your assistant by using the api specification to add a custom extension.
 
 ### Download the api specifications
