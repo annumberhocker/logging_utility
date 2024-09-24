@@ -19,7 +19,7 @@ To deploy onto OpenShift follow the steps [here](./OPENSHIFT_DEPLOY.md)
 
 **POST /log/{filename}**
 
-Write to the log file `filename` located in `/tmp/log_service_files` subdirectory. The data will be appended in `csv` format to the file if it exists, so add the `.csv` extension to the filename.
+Append to the log file `filename` located in `/tmp/log_service_files` subdirectory. The data will be appended in `csv` format to the file if it exists, so add the `.csv` extension to the filename.
 
 **Request body**:
 ```
