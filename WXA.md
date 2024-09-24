@@ -14,7 +14,9 @@ Use this specification file to create and add the extensios to your assistant.
 
 1.  After you build the extension, and it appears on your **Integrations** page, click **Add** to add it to your assistant. For general instructions on adding any custom extension, see [Adding an extension to your assistant](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-add-custom-extension).
 
-1.  In **Servers**, under **Server Variables**, add the url (without the https) for your hosted application as `llm_route`. 
+1.  In **Servers**, under **Server Variables**, add the url (without the https) for your hosted application as `llm_route`.
+
+This extension is now available to be used in your Actions.
 
 **NOTE:** 
 - If you add apis and capabilities to this application, feel free to add them to the openapi specification. The application is intended to be an example of how to get started. If you add APIs after the Actions have been created, you will need to download your Actions, upload the new Open API spec and re-upload your Actions.
