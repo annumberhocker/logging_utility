@@ -3,7 +3,7 @@ An application that exposes an api to write log data from a manual test question
 
 ## Deploying the application
 
-### Deploying locally
+### Deploying locally using python environment
 
 To run the application on your local machine, follow these steps:
 
@@ -33,6 +33,14 @@ To run the application on your local machine, follow these steps:
     The url, for purposes of using cURL is http://0.0.0.0:8000.
 
     To access Swagger go to http://0.0.0.0:8000/docs
+### Deploying locally in a container
+
+To deploy in a container using podman: 
+```
+podman build -t logging-utility .
+podman run --rm -p 8000:8000 logging-utility
+```
+
 ### Deploying onto Code Engine
 1. Log into [IBM Cloud](cloud.ibm.com)
 
