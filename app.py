@@ -30,6 +30,8 @@ async def log_to_csv(data: DataModel):
 
         print(data)
         
+        print (data)
+        
         # Convert the incoming JSON (Pydantic model) to a DataFrame
         new_data = pd.DataFrame([data.dict()])
         
