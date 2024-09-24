@@ -119,6 +119,6 @@ A quick sanity check with `<url>/docs` will take you to the swagger ui. To try t
 ```
 ## Output
 
-This will append the data as a line in a local csv file called `test_results.csv`
+This will append the data as a line in a local file to `/tmp/test_results.csv`
 
 
