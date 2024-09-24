@@ -13,7 +13,7 @@ To deploy the application in IBM Code Engine, follow the steps [here](./CODE_ENG
 
 ### Deploying onto an OpenShift cluster
 
-To deploy onto OpenShift follow the steps [here](./OPENSHIFT_DEPLOY.md)
+You can deploy this application onto a provisioned [Red Hat OpenShift](https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started) cluster. Follow the steps [here](./OPENSHIFT_DEPLOY.md)
 
 ## API descriptions
 
