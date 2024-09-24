@@ -5,34 +5,8 @@ An application that exposes an api to write log data from a manual test question
 
 ### Deploying locally using python environment
 
-To run the application on your local machine, follow these steps:
+To run the application on your local machine, follow the steps [here](./LOCAL_DEPLOY.md):
 
-1. Navigate to the project directory:
-
-    ```bash
-    git clone https://github.com/annumberhocker/logging_utility.git
-    cd logging_utility
-    ```
-
-3. Create a Python Enviroment, Activate it, and Install Requirements:
-
-    ```bash
-    python -m venv assetEnv
-    source assetEnv/bin/activate
-    python -m pip install -r requirements.txt
-     ```
-
-4. Start the project:
-
-    ```bash
-    python app.py
-    ```
-
-5. URL access:
-
-    The url, for purposes of using cURL is http://0.0.0.0:8000.
-
-    To access Swagger go to http://0.0.0.0:8000/docs
 ### Deploying locally in a container
 
 To deploy in a container using podman: 
@@ -116,17 +90,52 @@ Wait for the build to complete. To access the URL go into the **Applications** p
 
 A quick sanity check with `<url>/docs` will take you to the swagger ui. 
 
-## Example request
-```
-{
-  "query": "User Query",
-  "response": "LLM Response,
-  "rating": "1 - Excellent",
-  "comments": "Any additional comments on the generated response"
-}
-```
-## Output
+## API descriptions
 
-This will append the data as a line in a local file to `/tmp/test_results.csv`
+**POST /log/{filename}**
 
+    Write to the log file `filename` located in `/tmp/log_service_files` subdirectory. The data will be appended in `csv` format to the file if it exists, so add the .csv extension to the filename.
 
+    **Request body**:
+    ```
+    {
+      "query": "User Query",
+      "response": "LLM Response,
+      "rating": "1 - Excellent",
+      "comments": "Any additional comments on the generated response"
+    }
+    ```
+**GET /log/{filename}**
+
+    Get the contents of `filename`
+
+    **Response body**:
+    ```
+    [ 
+      <full file path>, 
+      <full file path>, 
+      <full file path>, 
+      <full file path>
+      ...
+    ]
+    ```
+
+**DELETE /log/{filename}**
+
+    Delete the file `filename` within the `/tmp/log_service_files` directory
+
+**GET /logs**
+
+    Get a list of all log files contained in the `/tmp/log_service_files` directory
+
+**DELETE /logs**
+
+    Delete all logs located in the `/tmp/log_service_files` directory
+
+**POST /clear_log/{filename}**
+
+    Move `filename` into a subdirectory named with datetime stamp. This saves off the log file so it isn't appended to or overwritten
+
+**POST /clear_logs**
+
+    Move all files located in the `/tmp/log_service_files` directory into a subdirectory named with datetime stamp. This saves off logs so they aren't appended to or overwritten
