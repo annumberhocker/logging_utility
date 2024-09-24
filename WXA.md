@@ -2,7 +2,7 @@
 
 You connect your assistant by using the api specification to add a custom extension.
 
-### Download the api specifications
+### Download the api specification
 
 Download the [logging_utility_openapi_v1.json](./logging_utility_openapi_v1.json) specification file. 
 
@@ -16,6 +16,6 @@ Use this specification file to create and add the extensios to your assistant.
 
 1.  In **Servers**, under **Server Variables**, add the url (without the https) for your hosted application as `llm_route`. 
 
-If you add apis and capabilities to this application, feel free to add them to the openapi specification. The application is intended to be an example of how to get started. If you add APIs after the Actions have been loaded, you will need to download your Actions, upload the new Open API spec and re-upload your Actions.
+If you add apis and capabilities to this application, feel free to add them to the openapi specification. The application is intended to be an example of how to get started. If you add APIs after the Actions have been created, you will need to download your Actions, upload the new Open API spec and re-upload your Actions.
 
 **NOTE**: If you create actions _before_ configuring the extension, you will see errors on the actions because it could not find the extension. 
