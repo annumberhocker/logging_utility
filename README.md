@@ -51,20 +51,20 @@ Get the contents of `filename`
 
 **DELETE /log/{filename}**
 
-    Delete the file `filename` within the `/tmp/log_service_files` directory
+Delete the file `filename` within the `/tmp/log_service_files` directory
 
 **GET /logs**
 
-    Get a list of all log files contained in the `/tmp/log_service_files` directory
+Get a list of all log files contained in the `/tmp/log_service_files` directory
 
 **DELETE /logs**
 
-    Delete all logs located in the `/tmp/log_service_files` directory
+Delete all logs located in the `/tmp/log_service_files` directory
 
 **POST /clear_log/{filename}**
 
-    Move `filename` into a subdirectory named with datetime stamp. This saves off the log file so it isn't appended to or overwritten
+Move `filename` into a subdirectory named with datetime stamp. This saves off the log file so it isn't appended to or overwritten
 
 **POST /clear_logs**
 
-    Move all files located in the `/tmp/log_service_files` directory into a subdirectory named with datetime stamp. This saves off logs so they aren't appended to or overwritten
+Move all files located in the `/tmp/log_service_files` directory into a subdirectory named with datetime stamp. This saves off logs so they aren't appended to or overwritten
