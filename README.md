@@ -23,7 +23,7 @@ See steps [here](./WXA.md) to connect this up to **IBM watsonx Assistant**.
 
 **POST /log/{filename}**
 
-Append to the log file `filename` located in `/tmp/log_service_files` subdirectory. The data will be appended in `csv` format to the file if it exists, so add the `.csv` extension to the filename.
+Write to a log file named `filename` within the `/tmp/log_service_files` subdirectory. The data will be appended in `csv` format to the file if it exists, so add the `.csv` extension to the filename.
 
 **Request body**:
 ```
