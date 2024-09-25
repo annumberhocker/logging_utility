@@ -1,4 +1,4 @@
-# AI Logging Utility
+# AI Logging Service
 An application that exposes an api to write log data from a manual test question session into a csv file
 
 ## Deploying the application
