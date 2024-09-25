@@ -1,5 +1,5 @@
 # AI Logging Service
-An application that exposes an api to write log data from a manual test question session into a csv file
+An application that exposes apis to write and retrieve log data from a manual test question session into a csv file
 
 ## Deploying the application
 
