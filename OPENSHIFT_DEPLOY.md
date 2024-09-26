@@ -11,24 +11,24 @@ To deploy this project on OpenShift, follow these steps:
 1. Create a new project (optional):
 
     ```bash
-    oc new-project <project-name>
+    oc new-project ai-logging-service
     ```
 1. Change into new project
     ```
-    oc project <project-name>
+    oc project ai-logging-service
     ```
 1. Build the application:
     ```bash
-    $ oc new-build --strategy docker --binary --name=rag_logging_service
-    $ oc start-build rag_logging_service  --from-dir=. --follow --wait
+    $ oc new-build --strategy docker --binary --name=ai-logging-service
+    $ oc start-build ai-logging-service --from-dir=. --follow --wait
     ```
 1. Deploy the application:
     ```bash
-    $ oc new-app rag_logging_service --name=rag_logging_service
+    $ oc new-app ai-logging-service--name=ai-logging-service
     ```
 1. Expose a Secure URL for this FastAPI app:
     ```bash
-    $ oc create route edge --service=rag_logging_service
+    $ oc create route edge --service=ai-logging-service
     ```
 
 A quick sanity check with the url created from the route: `<route>/docs` will take you to the swagger ui.
