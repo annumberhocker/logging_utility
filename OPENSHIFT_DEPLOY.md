@@ -21,10 +21,15 @@ To deploy this project on OpenShift, follow these steps:
     ```bash
     oc new-build --strategy docker --binary --name=ai-logging-service
     oc start-build ai-logging-service --from-dir=. --follow --wait
+    oc new-app ai-logging-service --name=ai-logging-service
     ```
-1. Deploy the application:
-    ```bash
-    oc new-app ai-logging-service--name=ai-logging-service
+    or
+    ```
+    oc new-app python:latest~https://github.com/ibm-build-lab/ai-logging-service.git  --name=ai-logging-service --strategy=source
+    ```
+    To monitor the build process:
+    ```
+    oc logs -f bc/my-python-app
     ```
 1. Expose a Secure URL for this FastAPI app:
     ```bash
