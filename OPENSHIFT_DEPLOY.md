@@ -29,7 +29,7 @@ To deploy this project on OpenShift, follow these steps:
     ```
     To monitor the build process:
     ```
-    oc logs -f bc/my-python-app
+    oc logs -f bc/ai-logging-service
     ```
 1. Expose a Secure URL for this FastAPI app:
     ```bash
