@@ -30,13 +30,23 @@ Write to a log file named `filename` within the `/tmp/log_service_files` subdire
 {
   "query": "User Query",
   "response": "LLM Response,
-  "rating": "1 - Excellent",
+  "rating": "5 - Excellent",
   "comments": "Any additional comments on the generated response"
 }
 ```
 **GET /log/{filename}**
 
 Get the contents of `filename`
+
+**Response body**:
+```
+query,llm_response,rating,comments
+User Query,LLM Response,5 - Excellent,Any additional comments on the generated response
+```
+
+**GET /logs**
+
+Get a list of all log files contained in the `/tmp/log_service_files` directory
 
 **Response body**:
 ```
@@ -48,10 +58,6 @@ Get the contents of `filename`
   ...
 ]
 ```
-
-**GET /logs**
-
-Get a list of all log files contained in the `/tmp/log_service_files` directory
 
 **POST /clear_log/{filename}**
 
@@ -68,3 +74,57 @@ Delete the file `filename` within the `/tmp/log_service_files` directory
 **DELETE /logs**
 
 Delete all logs located in the `/tmp/log_service_files` directory
+
+## Example commands: 
+Add logging data to logfile: 
+```
+curl -X 'POST' \
+  'https://logging-service.1m7e1ln410px.ca-tor.codeengine.appdomain.cloud/log/test_log.csv' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "query": "User Query",
+  "llm_response": "LLM Response",
+  "rating": "2",
+  "comments": "Any comments"
+}'
+```
+Retrieve the contents of a log file:
+```
+curl -X 'GET' \
+  'https://logging-service.1m7e1ln410px.ca-tor.codeengine.appdomain.cloud/log/test_log.csv' \
+  -H 'accept: application/json'
+```
+Clear a specific log file (move it into a dated subdirectory)
+```
+curl -X 'POST' \
+  'https://logging-service.1m7e1ln410px.ca-tor.codeengine.appdomain.cloud/clear_log/test_log.csv' \
+  -H 'accept: application/json'
+```
+Delete a specific log file:
+```
+curl -X 'DELETE' \
+  'https://logging-service.1m7e1ln410px.ca-tor.codeengine.appdomain.cloud/log/test_log.csv' \
+  -H 'accept: application/json'
+```
+Get a list of all log files:
+```
+curl -X 'GET' \
+  'https://logging-service.1m7e1ln410px.ca-tor.codeengine.appdomain.cloud/logs' \
+  -H 'accept: application/json'
+```
+Clear all log files (move them into a dated subdirectory)
+```
+curl -X 'POST' \
+  'https://logging-service.1m7e1ln410px.ca-tor.codeengine.appdomain.cloud/clear_logs/test_log.csv' \
+  -H 'accept: application/json' \
+  -d ''
+```
+Delete all log files:
+```
+curl -X 'DELETE' \
+  'https://logging-service.1m7e1ln410px.ca-tor.codeengine.appdomain.cloud/logs' \
+  -H 'accept: application/json'
+```
+
+
