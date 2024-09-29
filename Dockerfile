@@ -1,4 +1,4 @@
-FROM FROM registry.access.redhat.com/ubi8/python-312
+FROM registry.access.redhat.com/ubi8/python-312
 WORKDIR /code
 COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
